@@ -432,6 +432,7 @@ class TestTaggedUnions(unittest.TestCase):
         with self.assertLogs() as captured_log:
             parsed = parser.parse(response, output_shape)
             self.assertEqual(parsed, expected_parsed_response)
+            print(captured_log.records)
             self.assertEqual(len(captured_log.records), 1)
             self.assertIn(
                 (
