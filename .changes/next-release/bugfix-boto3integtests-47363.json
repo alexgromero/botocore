@@ -1,0 +1,5 @@
+{
+  "type": "bugfix",
+  "category": "boto3 integ tests",
+  "description": "Update resource name generation to avoid collisions."
+}
