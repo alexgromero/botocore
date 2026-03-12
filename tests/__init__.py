@@ -72,6 +72,11 @@ def skip_if_windows(reason):
         def test_some_non_windows_stuff(self):
             self.assertEqual(...)
     """
+    if callable(reason):
+        raise TypeError(
+            "Use @skip_if_windows('reason') with parentheses, "
+            "not bare @skip_if_windows"
+        )
 
     def decorator(func):
         return unittest.skipIf(
@@ -82,6 +87,10 @@ def skip_if_windows(reason):
 
 
 def requires_crt(reason=None):
+    if callable(reason):
+        raise TypeError(
+            "Use @requires_crt() with parentheses, not bare @requires_crt"
+        )
     if reason is None:
         reason = "Test requires awscrt to be installed"
 
@@ -92,6 +101,10 @@ def requires_crt(reason=None):
 
 
 def skip_if_crt(reason=None):
+    if callable(reason):
+        raise TypeError(
+            "Use @skip_if_crt() with parentheses, not bare @skip_if_crt"
+        )
     if reason is None:
         reason = "Test requires awscrt to NOT be installed"
 
