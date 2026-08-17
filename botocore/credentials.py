@@ -83,7 +83,8 @@ try:
         DEFAULT_NEW_CREDENTIAL_REFRESH,
     )
 except ImportError:
-    DEFAULT_NEW_CREDENTIAL_REFRESH = False
+    DEFAULT_NEW_CREDENTIAL_REFRESH = True
+    # DEFAULT_NEW_CREDENTIAL_REFRESH = False
 
 logger = logging.getLogger(__name__)
 ReadOnlyCredentials = namedtuple(
@@ -104,7 +105,7 @@ _NONRECOVERABLE_STS_ERROR_CODES = frozenset(
         'InvalidIdentityToken',
         'MalformedPolicyDocument',
         'PackedPolicyTooLarge',
-        'RegionDisabled',
+        'RegionDisabledException',
     )
 )
 _NONRECOVERABLE_STS_METHODS = frozenset(

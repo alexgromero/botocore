@@ -48,7 +48,8 @@ try:
         DEFAULT_NEW_CREDENTIAL_REFRESH,
     )
 except ImportError:
-    DEFAULT_NEW_CREDENTIAL_REFRESH = False
+    DEFAULT_NEW_CREDENTIAL_REFRESH = True
+    # DEFAULT_NEW_CREDENTIAL_REFRESH = False
 
 # IP Regexes retained for backwards compatibility
 from botocore.compat import (
